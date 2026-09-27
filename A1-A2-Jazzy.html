@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talking Dutch A1-A2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #060606;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #060606;
+    --card-bg: #0c0c0c;
+    --border: #262626;
+    --border-strong: #3a3a3a;
+    --text: #f5f5f5;
+    --text-muted: #a3a3a3;
+    --text-faint: #6b6b6b;
+
+    --accent: #FF7A1A;
+    --accent-strong: #E8650A;
+    --accent-soft: rgba(255,122,26,0.12);
+    --accent-border: rgba(255,122,26,0.45);
+    --accent-on: #170D06;
+
+    --link: #FFA85C;
+    --link-hover: #FF7A1A;
+
+    --amber-mid: rgba(255,179,102,0.45);
+    --amber-light: rgba(255,179,102,0.12);
+
+    --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .site-header {
+    background: var(--bg);
+    color: var(--text);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,122,26,0.3);
+  }
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .header-title {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cursor-bar { width: 2px; height: 18px; background: var(--text); opacity: 0.7; animation: blink 1.1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .header-level-badges { display: flex; gap: 6px; margin-left: 2px; }
+  .level-badge {
+    padding: 3px 11px;
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .header-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .header-progress { display: flex; align-items: center; gap: 10px; }
+  .header-pct { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--text); }
+  .header-bar-bg { width: 120px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+  .header-bar-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.4s ease; }
+
+  /* Main */
+  .main { max-width: 900px; margin: 0 auto; padding: 24px 24px 60px; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 24px; }
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .stat-num { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .stat-label { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.8px; }
+
+  /* Filter bar */
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { background: var(--accent-soft); }
+  .filter-btn.active { background: var(--accent); color: var(--accent-on); border-color: var(--accent); }
+  .expand-all {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .expand-all:hover { background: var(--accent-soft); }
+
+  /* Module */
+  .module {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.15s, border-color 0.15s;
+  }
+  .module:hover { border-color: var(--accent-border); box-shadow: 0 4px 14px rgba(255,122,26,0.07); }
+  .module.hidden { display: none; }
+
+  .module-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    cursor: pointer;
+    user-select: none;
+    background: transparent;
+    transition: background 0.1s;
+  }
+  .module-header:hover { background: rgba(255,255,255,0.03); }
+
+  .mod-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .mod-num.complete { background: var(--accent); color: var(--accent-on); }
+
+  .mod-info { flex: 1; min-width: 0; }
+  .mod-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--text); }
+  .mod-sub { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+
+  .mod-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .mod-bar-wrap { display: flex; align-items: center; gap: 8px; }
+  .mod-bar-bg { width: 70px; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .mod-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s; }
+  .mod-count { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); min-width: 26px; text-align: right; }
+
+  .chevron {
+    width: 16px; height: 16px;
+    color: var(--text-faint);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .chevron.open { transform: rotate(180deg); }
+
+  /* Sessions */
+  .module-body { display: none; border-top: 1px solid var(--border); }
+  .module-body.open { display: block; }
+
+  .session {
+    display: grid;
+    grid-template-columns: 48px 80px 1fr;
+    align-items: start;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+  .session:last-child { border-bottom: none; }
+  .session.done { background: rgba(255,122,26,0.05); }
+
+  .check-col { display: flex; flex-direction: column; align-items: center; gap: 6px; padding-top: 2px; }
+  .check-col input[type=checkbox] {
+    width: 18px; height: 18px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .ses-num-label { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); text-align: center; }
+
+  .ses-type-col { padding-top: 3px; }
+  .ses-letter {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    border-radius: 4px;
+    padding: 2px 7px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+  .ses-abs { font-size: 10px; color: var(--text-faint); }
+
+  .ses-content { }
+  .fixed-line {
+    font-size: 11px;
+    color: var(--text-faint);
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .fixed-line span { color: var(--text-muted); font-weight: 500; }
+  .fixed-link { color: var(--link); font-weight: 500; text-decoration: underline; text-decoration-color: rgba(255,168,92,0.4); }
+  .fixed-link:hover { color: var(--link-hover); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+  .tag {
+    font-size: 11px;
+    padding: 2px 9px;
+    border-radius: 20px;
+    border: 1px solid;
+    font-weight: 600;
+  }
+  .tag-p { background: linear-gradient(135deg, rgba(255,179,102,0.16), rgba(255,167,38,0.16)); color: #FFB366; border-color: #FFA726; }
+  .tag-t { background: linear-gradient(135deg, rgba(255,167,38,0.16), rgba(255,122,26,0.16)); color: #FFB25E; border-color: #FF7A1A; }
+  .tag-a { background: linear-gradient(135deg, rgba(255,122,26,0.16), rgba(232,101,10,0.16)); color: #FF9248; border-color: #E8650A; }
+  .tag-c { background: linear-gradient(135deg, rgba(255,138,80,0.16), rgba(193,68,14,0.16)); color: #FF8A50; border-color: #C1440E; }
+
+  .hw-section { }
+  .hw-label { font-family: var(--font-mono); font-size: 10px; color: var(--text-faint); margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.6px; }
+  .hw-input {
+    width: 100%;
+    font-size: 12px;
+    padding: 6px 10px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: var(--bg-secondary);
+    color: var(--text);
+    font-family: inherit;
+    resize: vertical;
+    min-height: 32px;
+    max-height: 400px;
+    overflow-y: auto;
+    transition: border-color 0.15s;
+  }
+  .hw-input::placeholder { color: var(--text-faint); }
+  .hw-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+  .hw-input.has-note { border-color: var(--amber-mid); background: var(--amber-light); }
+
+  /* Checkmark overlay on done sessions */
+  .done-badge {
+    display: none;
+    font-size: 10px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .session.done .done-badge { display: block; }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .header-bar-bg { width: 80px; }
+    .session { grid-template-columns: 40px 64px 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div>
+      <div class="header-title">
+        <span class="cursor-bar"></span>
+        Talking Dutch
+        <span class="header-level-badges">
+          <span class="level-badge">A1</span>
+          <span class="level-badge">A2</span>
+        </span>
+      </div>
+      <div class="header-sub">32 modules · 128 sessions · ±107 hours</div>
+    </div>
+    <div class="header-progress">
+      <div class="header-pct" id="hdr-pct">0%</div>
+      <div>
+        <div class="header-bar-bg"><div class="header-bar-fill" id="hdr-bar" style="width:0%"></div></div>
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);text-align:right;margin-top:3px;" id="hdr-count">0 / 128</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="stats">
+    <div class="stat-card"><div class="stat-num" id="s-done">0</div><div class="stat-label">Completed</div></div>
+    <div class="stat-card"><div class="stat-num" id="s-left">128</div><div class="stat-label">Remaining</div></div>
+    <div class="stat-card"><div class="stat-num" id="s-hours">0h</div><div class="stat-label">Hours done</div></div>
+    <div class="stat-card"><div class="stat-num" id="s-modules">0</div><div class="stat-label">Modules done</div></div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterModules('all', this)">All modules</button>
+    <button class="filter-btn" onclick="filterModules('incomplete', this)">Incomplete</button>
+    <button class="filter-btn" onclick="filterModules('complete', this)">Completed</button>
+    <button class="filter-btn" onclick="filterModules('inprogress', this)">In progress</button>
+    <button class="expand-all" onclick="toggleAll()">Expand all</button>
+  </div>
+
+  <div class="filter-bar" style="margin-top:8px;">
+    <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);align-self:center;">
+      Student: <strong style="color:var(--text);">Jazzy</strong>
+    </span>
+    <button class="expand-all" onclick="syncAllToSheet()">Sync all now</button>
+    <span id="sync-status" style="font-family:var(--font-mono);font-size:11px;color:var(--text-faint);align-self:center;"></span>
+  </div>
+
+  <div id="modules-container"></div>
+
+</main>
+
+<script>
+// Podcasts / News / Trivia+Literature / Practice exams — rotate by session letter A-D
+const SESSION_TYPES = [
+  {
+    letter: "A",
+    tags: [
+      {text: "Easy Dutch · 8 min", cls: "tag-p", url: "https://www.easydutchonline.com/podcast"},
+      {text: "NOS Nieuws · 9 min", cls: "tag-t", url: "https://nos.nl"},
+      {text: "Oefenexamen: Lezen - A2 · 8 min", cls: "tag-c", url: "https://www.inburgeren.nl/examen-doen/oefenen.jsp"},
+    ]
+  },
+  {
+    letter: "B",
+    tags: [
+      {text: "Inburgering A2-B1 · 4 min", cls: "tag-p", url: "https://inburgering.org/nl/podcasts"},
+      {text: "NOS Nieuws · 8 min", cls: "tag-t", url: "https://nos.nl"},
+      {text: "Korte verhalen · 5 min", cls: "tag-a", url: "https://drive.google.com/file/d/1TC1WdVKc2_cuiPLmBdXvMPhvTVM31hEW/view?usp=drive_link"},
+      {text: "Oefenexamen: Luisteren - A2 · 8 min", cls: "tag-c", url: "https://www.inburgeren.nl/examen-doen/oefenen.jsp"},
+    ]
+  },
+  {
+    letter: "C",
+    tags: [
+      {text: "NOS Nieuws · 9 min", cls: "tag-t", url: "https://nos.nl"},
+      {text: "KNM · 8 min", cls: "tag-a", url: "https://knmoefenen.nl/en/dashboard"},
+      {text: "Dictees · 5 min", cls: "tag-a", url: "https://onzetaal.nl/taalloket/oefenen-voor-dictees"},
+      {text: "Oefenexamen: Schrijven - A2 · 8 min", cls: "tag-c", url: "https://www.inburgeren.nl/examen-doen/oefenen.jsp"},
+    ]
+  },
+  {
+    letter: "D",
+    tags: [
+      {text: "NOS Journaal · 9 min", cls: "tag-t", url: "https://over.nos.nl/onze-programmas/journaal-in-makkelijke-taal/"},
+      {text: "De slimste mens · 8 min", cls: "tag-a", url: "https://npo.nl/start/serie/de-slimste-mens/afleveringen/seizoen-29"},
+      {text: "Oefenexamen: Spreken - A2 · 8 min", cls: "tag-c", url: "https://www.inburgeren.nl/examen-doen/oefenen.jsp"},
+    ]
+  }
+];
+
+// Grammar — fixed per session letter: A=Van Dale, B=Dictees, C=Grammatica in gebruik, D=Videos
+const GRAMMATICA = [
+  {text: "Grammatica in gebruik + Videos", parts: [{text: "Grammatica in gebruik", url: "https://drive.google.com/file/d/1EPMd0cMuuHdQwd_VQxOLzQ5wnXQlNKNX/view?usp=drive_link"}, {text: "Videos", url: "https://www.youtube.com/@dutchtoday"}]},
+  {text: "Van Dale Grammatica + Videos", parts: [{text: "Van Dale Grammatica", url: "https://drive.google.com/file/d/1cw_7lbItLjiBaVvGcoFpH7KUPOg620KT/view?usp=drive_link"}, {text: "Videos", url: "https://www.youtube.com/@dutchtoday"}]},
+  {text: "Grammatica in gebruik + Videos", parts: [{text: "Grammatica in gebruik", url: "https://drive.google.com/file/d/1EPMd0cMuuHdQwd_VQxOLzQ5wnXQlNKNX/view?usp=drive_link"}, {text: "Videos", url: "https://www.youtube.com/@dutchtoday"}]},
+  {text: "Van Dale Grammatica + Videos", parts: [{text: "Van Dale Grammatica", url: "https://drive.google.com/file/d/1cw_7lbItLjiBaVvGcoFpH7KUPOg620KT/view?usp=drive_link"}, {text: "Videos", url: "https://www.youtube.com/@dutchtoday"}]}
+];
+
+// Workbooks + audio — fixed per session letter: A=Taalcompleet A1+A2, B=Nederlands in actie, C=Taalcompleet A1+A2, D=Nederlands in actie
+const TAALCOMPLEET_A1A2 = {text: "Taalcompleet A1 + A2", parts: [
+  {text: "A1", url: "https://drive.google.com/file/d/14yHMSH-L7dMT6LpecyKwx2-vArN054LB/view?usp=drivesdk"},
+  {text: "A2", url: "https://drive.google.com/file/d/1v1O_4rOmOR5WZRlY0sxH559sxPKt1a2q/view?usp=drive_link", audioUrl: "https://www.youtube.com/watch?v=-VeJ75e-mJI&list=PLl74A1LTuUSUaM9kmbs9jtqIWdkkRfnJ3"}
+]};
+const NEDERLANDS_IN_ACTIE = {text: "Nederlands in actie", url: "https://drive.google.com/file/d/1jLGtU6i3ZBP4ZMzobuTUYJ7gJE20vEi4/view?usp=drive_link", audioUrl: "https://www.youtube.com/playlist?list=PLF-qJ8Ed0qHd7ToqP0Jvbq32T8fjeq8PH"};
+const WERKBOEKEN = [
+  TAALCOMPLEET_A1A2,
+  NEDERLANDS_IN_ACTIE,
+  TAALCOMPLEET_A1A2,
+  NEDERLANDS_IN_ACTIE
+];
+
+let state = {};
+try { state = JSON.parse(localStorage.getItem('td_a1a2_50_jazzy') || '{}'); } catch(e) {}
+
+function save() { try { localStorage.setItem('td_a1a2_50_jazzy', JSON.stringify(state)); } catch(e) {} }
+
+// ---- Google Sheets sync ----
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyZst2FzeZqGNiOsK8_GIItfrWJn8E1t22N_dtYHsJGizB6aAQKlgcPOCz8NVEkj6nNYA/exec';
+const TRACKER_NAME = 'A1-A2';
+const STUDENT_NAME = 'Jazzy';
+
+function setSyncStatus(text) {
+  const el = document.getElementById('sync-status');
+  if (el) el.textContent = text;
+}
+
+
+function buildMaterials(ses) {
+  try {
+    const t = SESSION_TYPES[ses - 1];
+    const g = GRAMMATICA[ses - 1];
+    const w = WERKBOEKEN[ses - 1];
+    const tagsStr = t && t.tags ? t.tags.map(function (tag) { return tag.text; }).join(', ') : '';
+    const wbStr = w ? (w.parts ? w.parts.map(function (p) { return w.text + ' ' + p.text; }).join(', ') : w.text) : '';
+    const grStr = g ? g.text : '';
+    return 'Content: ' + tagsStr + ' | Grammatica: ' + grStr + ' | Werkboek: ' + wbStr;
+  } catch (e) {
+    return '';
+  }
+}
+
+function syncRow(mod, ses) {
+  if (!SHEET_URL) return;
+  const t = SESSION_TYPES[ses - 1];
+  const chkKey = 'chk_' + mod + '_' + ses;
+  const noteKey = 'note_' + mod + '_' + ses;
+  const payload = {
+    tracker: TRACKER_NAME,
+    student: STUDENT_NAME,
+    mod: mod,
+    ses: ses,
+    type: t.letter,
+    sesNum: (mod - 1) * 4 + ses,
+    checked: !!state[chkKey],
+    note: state[noteKey] || '',
+    materials: buildMaterials(ses)
+  };
+  setSyncStatus('Syncing…');
+  fetch(SHEET_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  }).then(() => setSyncStatus('Synced ✓'))
+    .catch(() => setSyncStatus('Sync failed — will retry next change'));
+}
+
+function syncAllToSheet() {
+  const batch = [];
+  for (let mod = 1; mod <= 32; mod++) {
+    for (let ses = 1; ses <= 4; ses++) {
+      const chkKey = 'chk_' + mod + '_' + ses;
+      const noteKey = 'note_' + mod + '_' + ses;
+      if (state[chkKey] || (state[noteKey] || '').trim()) {
+        const t = SESSION_TYPES[ses - 1];
+        batch.push({
+          tracker: TRACKER_NAME,
+          student: STUDENT_NAME,
+          mod: mod,
+          ses: ses,
+          type: t.letter,
+          sesNum: (mod - 1) * 4 + ses,
+          checked: !!state[chkKey],
+          note: state[noteKey] || '',
+          materials: buildMaterials(ses)
+        });
+      }
+    }
+  }
+  if (!batch.length) {
+    setSyncStatus('Nothing to sync yet');
+    return;
+  }
+  setSyncStatus('Syncing ' + batch.length + ' items…');
+  fetch(SHEET_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({ batch: batch })
+  }).then(() => setSyncStatus('Synced ' + batch.length + ' items ✓'))
+    .catch(() => setSyncStatus('Sync failed'));
+}
+
+
+function autoGrow(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 400) + 'px';
+}
+
+function getDone() {
+  let done = 0;
+  for (let k in state) { if (k.startsWith('chk_') && state[k]) done++; }
+  return done;
+}
+
+function getModuleDone(mod) {
+  let done = 0;
+  for (let s = 1; s <= 4; s++) { if (state['chk_' + mod + '_' + s]) done++; }
+  return done;
+}
+
+function updateGlobal() {
+  const done = getDone();
+  const pct = Math.round(done / 128 * 100);
+  const hours = (done * 50 / 60).toFixed(1);
+  let modsDone = 0;
+  for (let m = 1; m <= 32; m++) { if (getModuleDone(m) === 4) modsDone++; }
+
+  document.getElementById('s-done').textContent = done;
+  document.getElementById('s-left').textContent = 128 - done;
+  document.getElementById('s-hours').textContent = hours + 'h';
+  document.getElementById('s-modules').textContent = modsDone;
+  document.getElementById('hdr-pct').textContent = pct + '%';
+  document.getElementById('hdr-bar').style.width = pct + '%';
+  document.getElementById('hdr-count').textContent = done + ' / 128';
+}
+
+function updateModuleUI(mod) {
+  const done = getModuleDone(mod);
+  const pct = Math.round(done / 4 * 100);
+  const fill = document.getElementById('mod-bar-' + mod);
+  const count = document.getElementById('mod-count-' + mod);
+  const numEl = document.getElementById('mod-num-' + mod);
+  const modEl = document.getElementById('module-' + mod);
+  if (fill) fill.style.width = pct + '%';
+  if (count) count.textContent = done + '/4';
+  if (numEl) {
+    if (done === 4) numEl.classList.add('complete');
+    else numEl.classList.remove('complete');
+  }
+  if (modEl) {
+    modEl.dataset.done = done;
+  }
+}
+
+function toggleSession(mod, ses, el) {
+  const key = 'chk_' + mod + '_' + ses;
+  state[key] = el.checked;
+  const sesEl = document.getElementById('ses-' + mod + '-' + ses);
+  if (el.checked) sesEl.classList.add('done');
+  else sesEl.classList.remove('done');
+  save();
+  updateGlobal();
+  updateModuleUI(mod);
+  syncRow(mod, ses);
+}
+
+function saveNote(mod, ses, el) {
+  const key = 'note_' + mod + '_' + ses;
+  state[key] = el.value;
+  if (el.value.trim()) el.classList.add('has-note');
+  else el.classList.remove('has-note');
+  save();
+  syncRow(mod, ses);
+}
+
+function toggleModule(mod) {
+  const body = document.getElementById('body-' + mod);
+  const chev = document.getElementById('chev-' + mod);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  chev.classList.toggle('open', !isOpen);
+  if (!isOpen) {
+    body.querySelectorAll('.hw-input').forEach(autoGrow);
+  }
+}
+
+let allExpanded = false;
+function toggleAll() {
+  allExpanded = !allExpanded;
+  for (let m = 1; m <= 32; m++) {
+    const body = document.getElementById('body-' + m);
+    const chev = document.getElementById('chev-' + m);
+    if (body) { body.classList.toggle('open', allExpanded); }
+    if (chev) { chev.classList.toggle('open', allExpanded); }
+  }
+  document.querySelector('.expand-all').textContent = allExpanded ? 'Collapse all' : 'Expand all';
+  if (allExpanded) {
+    document.querySelectorAll('.hw-input').forEach(autoGrow);
+  }
+}
+
+function filterModules(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  for (let m = 1; m <= 32; m++) {
+    const el = document.getElementById('module-' + m);
+    if (!el) continue;
+    const done = parseInt(el.dataset.done || 0);
+    let show = true;
+    if (type === 'complete') show = done === 4;
+    else if (type === 'incomplete') show = done < 4;
+    else if (type === 'inprogress') show = done > 0 && done < 4;
+    el.classList.toggle('hidden', !show);
+  }
+}
+
+// Build DOM
+const container = document.getElementById('modules-container');
+
+for (let mod = 1; mod <= 32; mod++) {
+  const done = getModuleDone(mod);
+  const pct = Math.round(done / 4 * 100);
+  const modEl = document.createElement('div');
+  modEl.className = 'module';
+  modEl.id = 'module-' + mod;
+  modEl.dataset.done = done;
+
+  const sessionsHTML = [1, 2, 3, 4].map(ses => {
+    const t = SESSION_TYPES[ses - 1];
+    const sesNum = (mod - 1) * 4 + ses;
+    const wb = WERKBOEKEN[ses - 1];
+    const gr = GRAMMATICA[ses - 1];
+    const chkKey = 'chk_' + mod + '_' + ses;
+    const noteKey = 'note_' + mod + '_' + ses;
+    const checked = state[chkKey] ? 'checked' : '';
+    const note = (state[noteKey] || '').replace(/"/g, '&quot;');
+    const doneClass = state[chkKey] ? 'done' : '';
+    const hasNote = (state[noteKey] || '').trim() ? 'has-note' : '';
+
+    return `
+    <div class="session ${doneClass}" id="ses-${mod}-${ses}">
+      <div class="check-col">
+        <input type="checkbox" ${checked} onchange="toggleSession(${mod},${ses},this)" title="Mark as complete">
+        <span class="ses-num-label">#${sesNum}</span>
+      </div>
+      <div class="ses-type-col">
+        <div class="ses-letter">Session ${t.letter}</div>
+        <div class="ses-abs">50 min</div>
+      </div>
+      <div class="ses-content">
+        <div class="fixed-line">
+          ${wb.parts
+            ? wb.parts.map(p => `<a href="${p.url}" target="_blank" class="fixed-link">Taalcompleet ${p.text}</a>${p.audioUrl ? ` <a href="${p.audioUrl}" target="_blank" class="fixed-link">+ audio</a>` : ''}`).join(' &nbsp;|&nbsp; ')
+            : `<a href="${wb.url}" target="_blank" class="fixed-link">${wb.text}</a>${wb.audioUrl ? ` <a href="${wb.audioUrl}" target="_blank" class="fixed-link">+ audio</a>` : ''}`}
+          · 15 min &nbsp;|&nbsp;
+          <a href="${gr.url}" target="_blank" class="fixed-link">${gr.text}</a>
+          · 10 min
+        </div>
+        <div class="tags">${t.tags.map(tg => `<a href="${tg.url}" target="_blank" class="tag ${tg.cls}" style="text-decoration:none;">${tg.text}</a>`).join('')}</div>
+        <div class="hw-section">
+          <div class="hw-label">Notes</div>
+          <textarea class="hw-input ${hasNote}" rows="1" placeholder="Notes for this session..." oninput="autoGrow(this)" onchange="saveNote(${mod},${ses},this)">${note}</textarea>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  modEl.innerHTML = `
+    <div class="module-header" onclick="toggleModule(${mod})">
+      <div class="mod-num ${done === 4 ? 'complete' : ''}" id="mod-num-${mod}">${mod}</div>
+      <div class="mod-info">
+        <div class="mod-title">Module ${mod}</div>
+        <div class="mod-sub">4 sessions · 200 minutes</div>
+      </div>
+      <div class="mod-right">
+        <div class="mod-bar-wrap">
+          <div class="mod-bar-bg"><div class="mod-bar-fill" id="mod-bar-${mod}" style="width:${pct}%"></div></div>
+          <span class="mod-count" id="mod-count-${mod}">${done}/4</span>
+        </div>
+        <svg class="chevron ${false ? 'open' : ''}" id="chev-${mod}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="4,6 8,10 12,6"/>
+        </svg>
+      </div>
+    </div>
+    <div class="module-body" id="body-${mod}">${sessionsHTML}</div>
+  `;
+
+  container.appendChild(modEl);
+}
+
+document.querySelectorAll('.hw-input').forEach(autoGrow);
+updateGlobal();
+</script>
+</body>
+</html>
