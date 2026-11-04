@@ -310,6 +310,26 @@
     pointer-events: none;
   }
 
+
+  /* ── Transparent orange text panels (same look as the courseware cards) ── */
+  .orange-panel, .hero-body, .booking-cal-wrap, #syllabus .toc-panel.active {
+    background: linear-gradient(160deg, rgba(222,125,52,0.3), rgba(181,98,31,0.3), rgba(138,71,21,0.3));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2rem 2.2rem;
+    box-sizing: border-box;
+  }
+  .hero-body { padding: 1.8rem 2rem; }
+  .hero-body .accent-bar { display: none; }
+  .booking-cal-wrap { margin-top: 2rem; }
+  #syllabus .toc-panel.active .toc-study {
+    background: rgba(0,0,0,0.22); border: 1px solid rgba(255,255,255,0.08);
+  }
+  #faq .orange-panel { padding: 1rem 2.2rem; }
+  @media (max-width: 640px) {
+    .orange-panel, .hero-body, .booking-cal-wrap, #syllabus .toc-panel.active { padding: 1.4rem 1.2rem; border-radius: 14px; }
+  }
+
   /* ── PAGES ── */
   .page { display: none; }
   .page.active { display: block; }
@@ -2019,10 +2039,14 @@
   .toc-panel { display: none; }
   .toc-panel.active { display: block; }
   #syllabus .toc-panel.active {
-    background: rgba(8,5,3,0.6);
-    border: 1px solid rgba(232,119,34,0.18);
-    border-radius: 14px;
-    padding: 0.5rem 1.6rem;
+    background: linear-gradient(160deg, rgba(222,125,52,0.3), rgba(181,98,31,0.3), rgba(138,71,21,0.3));
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 0.8rem 1.8rem 1.8rem;
+  }
+  #syllabus .toc-panel.active .toc-rec,
+  #syllabus .toc-panel.active .toc-study {
+    background: rgba(0,0,0,0.22); border: 1px solid rgba(255,255,255,0.08);
   }
   #syllabus .toc-module-title, #syllabus .toc-module-num {
     text-shadow: 0 1px 6px rgba(0,0,0,0.9);
@@ -3639,6 +3663,7 @@
 <div class="page" id="faq">
   <div class="content">
     <div class="page-title" id="faqTitle"></div>
+    <div class="orange-panel">
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">Do I need any prior knowledge of Dutch? <span class="arrow">▼</span></div>
       <div class="faq-a">Not at all! Courses start from absolute zero (A0). Whether you have never heard Dutch before or want to sharpen existing skills, there is a place for you.</div>
@@ -3670,6 +3695,7 @@
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">Is the integration exam included in any package? <span class="arrow">▼</span></div>
       <div class="faq-a">The 90-day Intermediate package includes a free mock exam at the end of the course, plus dedicated NT2 and inburgering exam preparation materials. This is our most comprehensive offering for those targeting official certification.</div>
+    </div>
     </div>
   </div>
 </div>
@@ -4124,7 +4150,7 @@
     <div class="page-title" id="aboutTitle"></div>
 
     <!-- Intro block -->
-    <div style="margin-bottom:3.5rem;">
+    <div class="orange-panel" style="margin-bottom:3.5rem;">
 
       <p style="color:#f0e6d6;font-size:0.97rem;line-height:1.9;margin-bottom:1rem;">My name is Jonathan van Hassel. I am a native Dutch speaker who has spent years living and working abroad — which means I know exactly what it feels like to navigate life in a language that isn't your own. That experience shapes every lesson I give.</p>
       <p style="color:#f0e6d6;font-size:0.97rem;line-height:1.9;margin-bottom:1rem;">I speak Dutch, English, Spanish and Portuguese — so no matter your background, we can find the right starting point. Whether you're a complete beginner or preparing for an official exam, my approach adapts to your pace, your goals and your life.</p>
@@ -4185,7 +4211,7 @@
     <div style="margin-bottom:3.5rem;">
       <div class="home-section-label">The culture</div>
       <h2 style="font-family:'Orbitron',sans-serif;font-size:clamp(1rem,2.2vw,1.5rem);font-weight:700;color:var(--text);margin-bottom:1.2rem;line-height:1.3;">Understanding Dutch Society</h2>
-      <div style="max-width:680px;margin:0 auto;">
+      <div class="orange-panel" style="max-width:680px;margin:0 auto;">
         <p style="color:#f0e6d6;font-size:0.97rem;line-height:1.9;margin-bottom:1rem;">The Dutch are known for their directness — they say what they mean and mean what they say. This is not rudeness; it is a cultural value rooted in respect and efficiency. Understanding this makes living, working, and studying in the Netherlands much smoother.</p>
         <p style="color:#f0e6d6;font-size:0.97rem;line-height:1.9;margin-bottom:1rem;">The <em>poldermodel</em> — a tradition of consensus-building and cooperation — runs through Dutch society from politics to the workplace. Knowing these cultural codes helps you connect with Dutch people on a deeper level, not just communicate with them.</p>
         <p style="color:#f0e6d6;font-size:0.97rem;line-height:1.9;">In my lessons, culture is never an afterthought. We explore Dutch customs, humour, civic life, and social norms alongside the language itself — because true fluency means understanding the people, not just the words.</p>
