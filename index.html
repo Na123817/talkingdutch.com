@@ -1015,6 +1015,11 @@
   html body #syllabus.page .syl-head .home-section-label { text-align: center; }
   html body #syllabus.page .toc-tabs { margin-top: 0 !important; }
   html body #services.page .services-left .services-label { text-align: center; }
+  /* Designed call-to-action button, placed at the bottom of FAQ and Blog */
+  .page-cta { display: flex; justify-content: center; align-self: center; width: 100%; margin: 3rem 0 1rem; order: 99; }
+  html body .btn-cta { font-family: 'Orbitron', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #1a0d03; background: linear-gradient(135deg, #ffb066, #f0781e 55%, #d9620f); border: 0; border-radius: 999px; padding: 1.05rem 3rem; cursor: pointer; box-shadow: 0 6px 26px rgba(240,120,30,0.38), inset 0 1px 0 rgba(255,255,255,0.35); transition: transform .25s, box-shadow .25s, filter .25s; }
+  html body .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 34px rgba(240,120,30,0.55), inset 0 1px 0 rgba(255,255,255,0.45); filter: brightness(1.08); }
+  html body .btn-cta:active { transform: translateY(-1px); }
   .fc-hint {
     margin-top: auto;
     font-family: 'Orbitron', sans-serif;
@@ -4173,7 +4178,8 @@
       <div class="faq-a">PayPal, card (via the PayPal link, no account needed), Revolut, iDEAL for Dutch bank accounts, and Wero. Bank transfer details are sent on request.</div>
     </div>
     </div>
-    <aside class="faq-aside"><div class="fa-kicker">Still curious?</div><div class="fa-title">Can't find your answer?</div><p>Send me your question — happy to help you choose the right level, package or exam route.</p><button onclick="show('contact')" class="cta-secondary">Contact me →</button></aside>
+    <aside class="faq-aside"><div class="fa-kicker">Still curious?</div><div class="fa-title">Can't find your answer?</div><p>Send me your question — happy to help you choose the right level, package or exam route.</p></aside>
+    <div class="page-cta"><button onclick="show('contact')" class="btn-cta">Contact me</button></div>
   </div>
 </div>
 
@@ -4870,8 +4876,8 @@
         <div class="blog-outro-kicker">Get started</div>
         <h3>Ready to try it yourself?</h3>
         <p>Pick an article below to get going, then take the next step: a 30-minute trial lesson where we look at where you are now and which package fits your goals best.</p>
-        <button onclick="show('contact')" class="cta-secondary">Book a trial lesson →</button>
       </div>
+      <div class="page-cta"><button onclick="show('contact')" class="btn-cta">Book a trial lesson</button></div>
     </div>
 
     <!-- Article: Stigmas -->
