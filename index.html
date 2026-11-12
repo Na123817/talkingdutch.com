@@ -971,6 +971,11 @@
   html body #home.page .hero-end { min-height: 0 !important; padding-top: 0 !important; }
   /* FAQ: leave room between the title and the questions so the photo shows */
   html body #faq.page .content > .orange-panel { margin-top: clamp(6rem, 34vh, 20rem) !important; }
+  /* Courseware cards and Contact form come last, below the rest of the page text */
+  html body #courseware.page .cw-end { padding-top: 0; }
+  html body #contact.page .contact-page { display: flex; flex-direction: column; }
+  html body #contact.page .contact-page > .contact-hero { order: 99; margin-top: 2rem !important; }
+  html body #contact.page .payment-methods { margin-top: calc(clamp(5rem, 62vh, 36rem) - 5rem); margin-bottom: 2rem; }
   .fc-hint {
     margin-top: auto;
     font-family: 'Orbitron', sans-serif;
@@ -3189,104 +3194,7 @@
     
     <p>Everything you need to master Dutch — workbooks, engaging video lessons, interactive exercises, and PowerPoint presentations. All materials are provided digitally and updated regularly.</p>
 
-    <div class="courseware-grid">
-      <div class="cw-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
-        <div class="cw-title">Workbooks</div>
-        <div class="cw-desc">Comprehensive workbooks for each level, from A0 foundations to C1 mastery. Exercises, vocabulary lists, and grammar drills included.</div>
-        <span class="cw-badge">All Levels</span>
-      </div>
-<div class="gflip-back">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
-        <div class="cw-title">Workbooks</div>
-        <div class="cw-desc">Comprehensive workbooks for each level, from A0 foundations to C1 mastery. Exercises, vocabulary lists, and grammar drills included.</div>
-        <span class="cw-badge">All Levels</span>
-      </div>
-</div>
-</div>
-      <div class="cw-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></div>
-        <div class="cw-title">Video Lessons</div>
-        <div class="cw-desc">Professionally recorded video content covering pronunciation, grammar explanations, and cultural context. Watch at your own pace, as many times as you need.</div>
-        <span class="cw-badge">On Demand</span>
-      </div>
-<div class="gflip-back">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></div>
-        <div class="cw-title">Video Lessons</div>
-        <div class="cw-desc">Professionally recorded video content covering pronunciation, grammar explanations, and cultural context. Watch at your own pace, as many times as you need.</div>
-        <span class="cw-badge">On Demand</span>
-      </div>
-</div>
-</div>
-      <div class="cw-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
-        <div class="cw-title">PowerPoints</div>
-        <div class="cw-desc">Slide decks used in live sessions are shared after each lesson so you can review and reinforce what was covered. Clear, visual learning aids.</div>
-        <span class="cw-badge">Post-Lesson</span>
-      </div>
-<div class="gflip-back">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
-        <div class="cw-title">PowerPoints</div>
-        <div class="cw-desc">Slide decks used in live sessions are shared after each lesson so you can review and reinforce what was covered. Clear, visual learning aids.</div>
-        <span class="cw-badge">Post-Lesson</span>
-      </div>
-</div>
-</div>
-      <div class="cw-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v11l3.5 6H5.5L9 14V3z"></path><line x1="6" y1="3" x2="18" y2="3"></line></svg></div>
-        <div class="cw-title">Practice Tests</div>
-        <div class="cw-desc">Mock exam papers for NT2 and inburgering preparation. Timed tests that simulate real exam conditions, with answer keys and feedback guidance.</div>
-        <span class="cw-badge">Exam Prep</span>
-      </div>
-<div class="gflip-back">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v11l3.5 6H5.5L9 14V3z"></path><line x1="6" y1="3" x2="18" y2="3"></line></svg></div>
-        <div class="cw-title">Practice Tests</div>
-        <div class="cw-desc">Mock exam papers for NT2 and inburgering preparation. Timed tests that simulate real exam conditions, with answer keys and feedback guidance.</div>
-        <span class="cw-badge">Exam Prep</span>
-      </div>
-</div>
-</div>
-      <div class="cw-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
-        <div class="cw-title">Audio Materials</div>
-        <div class="cw-desc">Listening exercises and pronunciation guides recorded by native Dutch speakers. Develop your ear for the language with authentic audio content.</div>
-        <span class="cw-badge">Listening</span>
-      </div>
-<div class="gflip-back">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
-        <div class="cw-title">Audio Materials</div>
-        <div class="cw-desc">Listening exercises and pronunciation guides recorded by native Dutch speakers. Develop your ear for the language with authentic audio content.</div>
-        <span class="cw-badge">Listening</span>
-      </div>
-</div>
-</div>
-      <div class="cw-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
-        <div class="cw-title">Culture &amp; Society</div>
-        <div class="cw-desc">Fascinating insights into Dutch culture, traditions, the Netherlands, and civic knowledge required for integration exams.</div>
-        <span class="cw-badge">Cultural</span>
-      </div>
-<div class="gflip-back">
-        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
-        <div class="cw-title">Culture &amp; Society</div>
-        <div class="cw-desc">Fascinating insights into Dutch culture, traditions, the Netherlands, and civic knowledge required for integration exams.</div>
-        <span class="cw-badge">Cultural</span>
-      </div>
-</div>
-</div>
-    </div>
+    
   </div>
   <!-- ── BOOKING SECTION ── -->
   <div class="booking-section">
@@ -3323,6 +3231,106 @@
       </div>
     </div>
   </div>
+<div class="content cw-end">
+<div class="courseware-grid">
+      <div class="cw-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
+        <div class="cw-title">Workbooks</div>
+        <div class="cw-desc">Comprehensive workbooks for each level, from A0 foundations to C1 mastery. Exercises, vocabulary lists, and grammar drills included.</div>
+        <span class="cw-badge">All Levels</span>
+      </div>
+<div class="gflip-back">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></div>
+        <div class="cw-title">Workbooks</div>
+        <div class="cw-desc">Comprehensive workbooks for each level, from A0 foundations to C1 mastery. Exercises, vocabulary lists, and grammar drills included.</div>
+        <span class="cw-badge">All Levels</span>
+      </div>
+</div>
+</div>
+      <div class="cw-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></div>
+        <div class="cw-title">Video Lessons</div>
+        <div class="cw-desc">Professionally recorded video content covering pronunciation, grammar explanations, and cultural context. Watch at your own pace, as many times as you need.</div>
+        <span class="cw-badge">On Demand</span>
+      </div>
+<div class="gflip-back">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></div>
+        <div class="cw-title">Video Lessons</div>
+        <div class="cw-desc">Professionally recorded video content covering pronunciation, grammar explanations, and cultural context. Watch at your own pace, as many times as you need.</div>
+        <span class="cw-badge">On Demand</span>
+      </div>
+</div>
+</div>
+      <div class="cw-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
+        <div class="cw-title">PowerPoints</div>
+        <div class="cw-desc">Slide decks used in live sessions are shared after each lesson so you can review and reinforce what was covered. Clear, visual learning aids.</div>
+        <span class="cw-badge">Post-Lesson</span>
+      </div>
+<div class="gflip-back">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
+        <div class="cw-title">PowerPoints</div>
+        <div class="cw-desc">Slide decks used in live sessions are shared after each lesson so you can review and reinforce what was covered. Clear, visual learning aids.</div>
+        <span class="cw-badge">Post-Lesson</span>
+      </div>
+</div>
+</div>
+      <div class="cw-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v11l3.5 6H5.5L9 14V3z"></path><line x1="6" y1="3" x2="18" y2="3"></line></svg></div>
+        <div class="cw-title">Practice Tests</div>
+        <div class="cw-desc">Mock exam papers for NT2 and inburgering preparation. Timed tests that simulate real exam conditions, with answer keys and feedback guidance.</div>
+        <span class="cw-badge">Exam Prep</span>
+      </div>
+<div class="gflip-back">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v11l3.5 6H5.5L9 14V3z"></path><line x1="6" y1="3" x2="18" y2="3"></line></svg></div>
+        <div class="cw-title">Practice Tests</div>
+        <div class="cw-desc">Mock exam papers for NT2 and inburgering preparation. Timed tests that simulate real exam conditions, with answer keys and feedback guidance.</div>
+        <span class="cw-badge">Exam Prep</span>
+      </div>
+</div>
+</div>
+      <div class="cw-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+        <div class="cw-title">Audio Materials</div>
+        <div class="cw-desc">Listening exercises and pronunciation guides recorded by native Dutch speakers. Develop your ear for the language with authentic audio content.</div>
+        <span class="cw-badge">Listening</span>
+      </div>
+<div class="gflip-back">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>
+        <div class="cw-title">Audio Materials</div>
+        <div class="cw-desc">Listening exercises and pronunciation guides recorded by native Dutch speakers. Develop your ear for the language with authentic audio content.</div>
+        <span class="cw-badge">Listening</span>
+      </div>
+</div>
+</div>
+      <div class="cw-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
+        <div class="cw-title">Culture &amp; Society</div>
+        <div class="cw-desc">Fascinating insights into Dutch culture, traditions, the Netherlands, and civic knowledge required for integration exams.</div>
+        <span class="cw-badge">Cultural</span>
+      </div>
+<div class="gflip-back">
+        <div class="cw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
+        <div class="cw-title">Culture &amp; Society</div>
+        <div class="cw-desc">Fascinating insights into Dutch culture, traditions, the Netherlands, and civic knowledge required for integration exams.</div>
+        <span class="cw-badge">Cultural</span>
+      </div>
+</div>
+</div>
+    </div>
+</div>
 </div>
 
 <!-- ══════════ SERVICES ══════════ -->
