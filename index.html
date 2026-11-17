@@ -116,7 +116,7 @@
    "name": "Can I pay in instalments?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "The complete 150-hour course can be paid in 3 instalments of €850."
+    "text": "Yes. The 200-hour package can be paid in 4 instalments of €850, and the 300-hour package in 6 instalments of €800."
    }
   },
   {
@@ -181,7 +181,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "5-Hour Dutch Lesson Package",
-          "description": "5 hours of private online Dutch lessons, as 5 lessons of 60 minutes or 6 lessons of 50 minutes."
+          "description": "5 private online Dutch lessons of 60 minutes on Google Meet."
         },
         "price": "120",
         "priceCurrency": "EUR"
@@ -191,7 +191,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "10-Hour Dutch Lesson Package",
-          "description": "10 hours of private online Dutch lessons with syllabus access and WhatsApp support."
+          "description": "10 private online Dutch lessons of 60 minutes on Google Meet."
         },
         "price": "230",
         "priceCurrency": "EUR"
@@ -200,8 +200,18 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Block 1 — 50 Hours (B1 Consolidation)",
-          "description": "The first block of the B1 to B2 program: 50 hours, 20 modules, progress tracker and block certificate."
+          "name": "25-Hour Dutch Lesson Package",
+          "description": "25 private online Dutch lessons of 60 minutes on Google Meet."
+        },
+        "price": "550",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "50-Hour Dutch Lesson Package",
+          "description": "50 private online Dutch lessons of 60 minutes on Google Meet."
         },
         "price": "1050",
         "priceCurrency": "EUR"
@@ -210,8 +220,8 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Blocks 1 + 2 — 100 Hours",
-          "description": "Two thirds of the B1 to B2 program: 100 hours, 40 modules, certificates per block."
+          "name": "100-Hour Dutch Lesson Package",
+          "description": "100 private online Dutch lessons of 60 minutes on Google Meet."
         },
         "price": "1900",
         "priceCurrency": "EUR"
@@ -220,10 +230,20 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Complete Course B1 to B2 — 150 Hours",
-          "description": "The full B1 to B2 program: 150 lesson hours across 60 modules, full NT2 and civic exam preparation, payable in 3 instalments."
+          "name": "200-Hour Dutch Lesson Package",
+          "description": "200 private online Dutch lessons of 60 minutes on Google Meet."
         },
-        "price": "2550",
+        "price": "3400",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "300-Hour Dutch Lesson Package",
+          "description": "300 private online Dutch lessons of 60 minutes on Google Meet."
+        },
+        "price": "4800",
         "priceCurrency": "EUR"
       },
       {
@@ -1166,6 +1186,10 @@
     html body #services.page.page .price-table.price-table td.pt-pkg::before { content: none; }
     html body #services.page.page .price-table.price-table td.pt-price { font-size: 1.2rem !important; }
   }
+  /* Home packages: 4 columns on desktop, 2 on tablets */
+  html body #home.page.page .pricing-grid.home-pricing { grid-template-columns: repeat(4, 1fr); max-width: 1180px; }
+  @media (max-width: 1100px) { html body #home.page.page .pricing-grid.home-pricing { grid-template-columns: repeat(2, 1fr); max-width: 760px; } }
+  @media (max-width: 600px) { html body #home.page.page .pricing-grid.home-pricing { grid-template-columns: 1fr; } }
   html body .footer-cta-text { margin: 0 0 0.6rem; font-size: 0.92rem; line-height: 1.55; color: rgba(247,236,217,0.75); }
   html body .footer-col-group a.footer-cta-btn { display: inline-flex; align-self: flex-start; padding: 0.7rem 1.3rem; border-radius: 999px; border: 1.5px solid rgba(240,120,30,0.9); background: rgba(240,120,30,0.16); color: #ffd9b0; font-weight: 600; transition: background .25s, transform .25s; }
   html body .footer-col-group a.footer-cta-btn:hover { background: rgba(240,120,30,0.32); color: #fff; transform: translateY(-2px); }
@@ -3081,7 +3105,7 @@
     <h2 class="home-section-title">Dutch Lesson Packages &amp; Pricing</h2>
 
     <p style="font-family:'Barlow',sans-serif;font-size:0.95rem;color:var(--muted);line-height:1.8;max-width:820px;margin:2rem auto 0;">
-      Start with one lesson or commit to the full course. The more hours you book, the less you pay per hour. Every lesson is a full 60 minutes, live on Google Meet, Monday to Saturday, at times that suit you (Amsterdam time).
+      Start with one lesson or book a full step to the next level. The more hours you book, the less you pay per hour. Every lesson is a full 60 minutes, live on Google Meet, Monday to Saturday, at times that suit you (Amsterdam time).
     </p>
 
     <div class="pricing-grid home-pricing">
@@ -3128,7 +3152,7 @@
             <div class="price-per">/5 Hours on Google Meet</div>
             <div class="price-tier">5-hour package</div>
             <button class="btn-purchase" onclick="addToCart('5 Hours - €120')">Purchase</button>
-            <p class="price-note">One lesson a week for about two months.</p>
+            <p class="price-note">One lesson a week for about five weeks.</p>
             <ul class="price-features">
               <li>Weekly lessons</li>
               <li>WhatsApp &amp; email support</li>
@@ -3142,7 +3166,7 @@
             <div class="price-per">/5 Hours on Google Meet</div>
             <div class="price-tier">5-hour package</div>
             <button class="btn-purchase" onclick="addToCart('5 Hours - €120')">Purchase</button>
-            <p class="price-note">One lesson a week for about two months.</p>
+            <p class="price-note">One lesson a week for about five weeks.</p>
             <ul class="price-features">
               <li>5 lessons of 60 minutes</li>
               <li>€24 per hour · save 4%</li>
@@ -3161,7 +3185,7 @@
             <div class="price-per">/10 Hours on Google Meet</div>
             <div class="price-tier">10-hour package</div>
             <button class="btn-purchase" onclick="addToCart('10 Hours - €230')">Purchase</button>
-            <p class="price-note">Two lessons a week for about three months.</p>
+            <p class="price-note">Two lessons a week for about five weeks.</p>
             <ul class="price-features">
               <li>Full syllabus access</li>
               <li>WhatsApp &amp; email support</li>
@@ -3175,7 +3199,7 @@
             <div class="price-per">/10 Hours on Google Meet</div>
             <div class="price-tier">10-hour package</div>
             <button class="btn-purchase" onclick="addToCart('10 Hours - €230')">Purchase</button>
-            <p class="price-note">Two lessons a week for about three months.</p>
+            <p class="price-note">Two lessons a week for about five weeks.</p>
             <ul class="price-features">
               <li>10 lessons of 60 minutes</li>
               <li>€23 per hour · save 8%</li>
@@ -3188,31 +3212,64 @@
       <div class="price-card">
         <div class="gflip-inner">
           <div class="gflip-front">
+            <div class="price-days">25 Hours</div>
+            <div class="price-trial">A quarter step</div>
+            <div class="price-amount"><span class="dollar">€</span><span class="big">550</span></div>
+            <div class="price-per">/25 Hours on Google Meet</div>
+            <div class="price-tier">25-hour package</div>
+            <button class="btn-purchase" onclick="addToCart('25 Hours - €550')">Purchase</button>
+            <p class="price-note">Two lessons a week for about three months.</p>
+            <ul class="price-features">
+              <li>A quarter of the A1 → A2 step</li>
+              <li>Personal progress tracker</li>
+              <li>WhatsApp &amp; email support</li>
+            </ul>
+          </div>
+          <div class="gflip-back">
+            <div class="price-days">25 Hours</div>
+            <div class="price-trial">A quarter step</div>
+            <div class="price-amount"><span class="dollar">€</span><span class="big">550</span></div>
+            <div class="price-per">/25 Hours on Google Meet</div>
+            <div class="price-tier">25-hour package</div>
+            <button class="btn-purchase" onclick="addToCart('25 Hours - €550')">Purchase</button>
+            <p class="price-note">Two lessons a week for about three months.</p>
+            <ul class="price-features">
+              <li>25 lessons of 60 minutes</li>
+              <li>€22 per hour · save 12%</li>
+              <li>About 3 months at 2 a week</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="gflip-inner">
+          <div class="gflip-front">
             <div class="price-days">50 Hours</div>
-            <div class="price-trial">Block 1 of the course</div>
+            <div class="price-trial">Half a step</div>
             <div class="price-amount"><span class="dollar">€</span><span class="big">1,050</span></div>
             <div class="price-per">/50 Hours on Google Meet</div>
-            <div class="price-tier">Block 1</div>
-            <button class="btn-purchase" onclick="addToCart('50 Hours (Block 1) - €1,050')">Purchase</button>
-            <p class="price-note">Two lessons a week for about six months: B1 consolidation.</p>
+            <div class="price-tier">50-hour package</div>
+            <button class="btn-purchase" onclick="addToCart('50 Hours - €1,050')">Purchase</button>
+            <p class="price-note">Two lessons a week for about six months.</p>
             <ul class="price-features">
-              <li>All of Block 1 (20 modules)</li>
+              <li>Half of the A1 → A2 step</li>
               <li>Personal progress tracker</li>
-              <li>Certificate after the block</li>
+              <li>WhatsApp &amp; email support</li>
             </ul>
           </div>
           <div class="gflip-back">
             <div class="price-days">50 Hours</div>
-            <div class="price-trial">Block 1 of the course</div>
+            <div class="price-trial">Half a step</div>
             <div class="price-amount"><span class="dollar">€</span><span class="big">1,050</span></div>
             <div class="price-per">/50 Hours on Google Meet</div>
-            <div class="price-tier">Block 1</div>
-            <button class="btn-purchase" onclick="addToCart('50 Hours (Block 1) - €1,050')">Purchase</button>
-            <p class="price-note">Two lessons a week for about six months: B1 consolidation.</p>
+            <div class="price-tier">50-hour package</div>
+            <button class="btn-purchase" onclick="addToCart('50 Hours - €1,050')">Purchase</button>
+            <p class="price-note">Two lessons a week for about six months.</p>
             <ul class="price-features">
               <li>50 lessons of 60 minutes</li>
               <li>€21 per hour · save 16%</li>
-              <li>About 6 months</li>
+              <li>About 6 months at 2 a week</li>
             </ul>
           </div>
         </div>
@@ -3222,30 +3279,63 @@
         <div class="gflip-inner">
           <div class="gflip-front">
             <div class="price-days">100 Hours</div>
-            <div class="price-trial">Two thirds of the course</div>
+            <div class="price-trial">One full step</div>
             <div class="price-amount"><span class="dollar">€</span><span class="big">1,900</span></div>
             <div class="price-per">/100 Hours on Google Meet</div>
-            <div class="price-tier">Blocks 1 + 2</div>
-            <button class="btn-purchase" onclick="addToCart('100 Hours (Blocks 1+2) - €1,900')">Purchase</button>
-            <p class="price-note">Three lessons a week for about eight months.</p>
+            <div class="price-tier">100-hour package</div>
+            <button class="btn-purchase" onclick="addToCart('100 Hours - €1,900')">Purchase</button>
+            <p class="price-note">Everything you need to go from A1 to A2.</p>
             <ul class="price-features">
-              <li>Blocks 1 &amp; 2 (40 modules)</li>
-              <li>Certificate per block</li>
-              <li>WhatsApp &amp; email support</li>
+              <li>The full A1 → A2 step</li>
+              <li>NT2 &amp; inburgering preparation</li>
+              <li>Certificate when you finish</li>
             </ul>
           </div>
           <div class="gflip-back">
             <div class="price-days">100 Hours</div>
-            <div class="price-trial">Two thirds of the course</div>
+            <div class="price-trial">One full step</div>
             <div class="price-amount"><span class="dollar">€</span><span class="big">1,900</span></div>
             <div class="price-per">/100 Hours on Google Meet</div>
-            <div class="price-tier">Blocks 1 + 2</div>
-            <button class="btn-purchase" onclick="addToCart('100 Hours (Blocks 1+2) - €1,900')">Purchase</button>
-            <p class="price-note">Three lessons a week for about eight months.</p>
+            <div class="price-tier">100-hour package</div>
+            <button class="btn-purchase" onclick="addToCart('100 Hours - €1,900')">Purchase</button>
+            <p class="price-note">Everything you need to go from A1 to A2.</p>
             <ul class="price-features">
               <li>100 lessons of 60 minutes</li>
               <li>€19 per hour · save 24%</li>
-              <li>About 8 months</li>
+              <li>About 8 months at 3 a week</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <div class="gflip-inner">
+          <div class="gflip-front">
+            <div class="price-days">200 Hours</div>
+            <div class="price-trial">One step up at B level</div>
+            <div class="price-amount"><span class="dollar">€</span><span class="big">3,400</span></div>
+            <div class="price-per">/200 Hours on Google Meet</div>
+            <div class="price-tier">200-hour package</div>
+            <button class="btn-purchase" onclick="addToCart('200 Hours - €3,400')">Purchase</button>
+            <p class="price-note">A full step: A2 → B1, B1 → B2 or B2 → C1.</p>
+            <ul class="price-features">
+              <li>A2 → B1, B1 → B2 or B2 → C1</li>
+              <li>Pay in 4 instalments of €850</li>
+              <li>Certificate when you finish</li>
+            </ul>
+          </div>
+          <div class="gflip-back">
+            <div class="price-days">200 Hours</div>
+            <div class="price-trial">One step up at B level</div>
+            <div class="price-amount"><span class="dollar">€</span><span class="big">3,400</span></div>
+            <div class="price-per">/200 Hours on Google Meet</div>
+            <div class="price-tier">200-hour package</div>
+            <button class="btn-purchase" onclick="addToCart('200 Hours - €3,400')">Purchase</button>
+            <p class="price-note">A full step: A2 → B1, B1 → B2 or B2 → C1.</p>
+            <ul class="price-features">
+              <li>200 lessons of 60 minutes</li>
+              <li>€17 per hour · save 32%</li>
+              <li>About 15 months at 3 a week</li>
             </ul>
           </div>
         </div>
@@ -3254,35 +3344,36 @@
       <div class="price-card featured">
         <div class="gflip-inner">
           <div class="gflip-front">
-            <div class="price-days">150 Hours</div>
+            <div class="price-days">300 Hours</div>
             <div class="price-trial">Best value</div>
-            <div class="price-amount"><span class="dollar">€</span><span class="big">2,550</span></div>
-            <div class="price-per">/150 Hours on Google Meet</div>
-            <div class="price-tier">Full course B1 → B2</div>
-            <button class="btn-purchase" onclick="addToCart('150 Hours (Complete Course) - €2,550')">Purchase</button>
-            <p class="price-note">Three lessons a week for about a year: the full program to B2.</p>
+            <div class="price-amount"><span class="dollar">€</span><span class="big">4,800</span></div>
+            <div class="price-per">/300 Hours on Google Meet</div>
+            <div class="price-tier">300-hour package</div>
+            <button class="btn-purchase" onclick="addToCart('300 Hours - €4,800')">Purchase</button>
+            <p class="price-note">The full C1 → C2 step, or two steps at your own pace.</p>
             <ul class="price-features">
-              <li>All 60 modules, B1 → B2</li>
-              <li>Pay in 3 instalments of €850</li>
-              <li>NT2 &amp; inburgering exam preparation</li>
+              <li>The full C1 → C2 step</li>
+              <li>Pay in 6 instalments of €800</li>
+              <li>Certificate when you finish</li>
             </ul>
           </div>
           <div class="gflip-back">
-            <div class="price-days">150 Hours</div>
+            <div class="price-days">300 Hours</div>
             <div class="price-trial">Best value</div>
-            <div class="price-amount"><span class="dollar">€</span><span class="big">2,550</span></div>
-            <div class="price-per">/150 Hours on Google Meet</div>
-            <div class="price-tier">Full course B1 → B2</div>
-            <button class="btn-purchase" onclick="addToCart('150 Hours (Complete Course) - €2,550')">Purchase</button>
-            <p class="price-note">Three lessons a week for about a year: the full program to B2.</p>
+            <div class="price-amount"><span class="dollar">€</span><span class="big">4,800</span></div>
+            <div class="price-per">/300 Hours on Google Meet</div>
+            <div class="price-tier">300-hour package</div>
+            <button class="btn-purchase" onclick="addToCart('300 Hours - €4,800')">Purchase</button>
+            <p class="price-note">The full C1 → C2 step, or two steps at your own pace.</p>
             <ul class="price-features">
-              <li>150 lessons of 60 minutes</li>
-              <li>€17 per hour · save 32%</li>
-              <li>Save €1,200 vs single lessons</li>
+              <li>300 lessons of 60 minutes</li>
+              <li>€16 per hour · save 36%</li>
+              <li>About 2 years at 3 a week</li>
             </ul>
           </div>
         </div>
       </div>
+
 
     </div>
 
@@ -3659,7 +3750,7 @@
   <div class="pricing-wrap">
     <h2 class="pt-heading">Choose Your <span class="accent">Plan</span></h2>
     <p style="font-family:'Barlow',sans-serif;font-size:0.95rem;color:var(--muted);line-height:1.8;max-width:820px;margin:1.4rem auto 0;text-align:center;">
-      Every lesson is 60 minutes. The more hours you book, the lower the price per hour. The full 150-hour course covers the complete B1 → B2 program: 3 blocks, 60 modules, plus about 150 hours of guided homework.
+      Every lesson is 60 minutes. The more hours you book, the lower the price per hour. Going up one level takes 100 to 300 hours, depending on where you start. The Syllabus shows each step.
     </p>
 
     <div class="price-table-wrap">
@@ -3691,25 +3782,39 @@
             <td data-label="Timeframe">Within 90 days</td>
           </tr>
           <tr>
-            <td data-label="Package" class="pt-pkg">50 hours (Block 1)</td>
+            <td data-label="Package" class="pt-pkg">25 hours</td>
+            <td data-label="Total price" class="pt-price">€550</td>
+            <td data-label="Per hour">€22</td>
+            <td data-label="Lessons">25 lessons of 60 min</td>
+            <td data-label="Timeframe">About 3 months</td>
+          </tr>
+          <tr>
+            <td data-label="Package" class="pt-pkg">50 hours</td>
             <td data-label="Total price" class="pt-price">€1,050</td>
             <td data-label="Per hour">€21</td>
             <td data-label="Lessons">50 lessons of 60 min</td>
-            <td data-label="Timeframe">2 a week, about 6 months</td>
+            <td data-label="Timeframe">About 6 months</td>
           </tr>
           <tr>
-            <td data-label="Package" class="pt-pkg">100 hours (Blocks 1+2)</td>
+            <td data-label="Package" class="pt-pkg">100 hours (A1 → A2)</td>
             <td data-label="Total price" class="pt-price">€1,900</td>
             <td data-label="Per hour">€19</td>
             <td data-label="Lessons">100 lessons of 60 min</td>
-            <td data-label="Timeframe">3 a week, about 8 months</td>
+            <td data-label="Timeframe">About 8 months</td>
+          </tr>
+          <tr>
+            <td data-label="Package" class="pt-pkg">200 hours (one B-level step)</td>
+            <td data-label="Total price" class="pt-price">€3,400</td>
+            <td data-label="Per hour">€17</td>
+            <td data-label="Lessons">200 lessons of 60 min</td>
+            <td data-label="Timeframe">About 15 months</td>
           </tr>
           <tr class="pt-featured">
-            <td data-label="Package" class="pt-pkg">150 hours (full course)</td>
-            <td data-label="Total price" class="pt-price">€2,550</td>
-            <td data-label="Per hour">€17</td>
-            <td data-label="Lessons">150 lessons of 60 min</td>
-            <td data-label="Timeframe">3 a week, about 12 months</td>
+            <td data-label="Package" class="pt-pkg">300 hours (C1 → C2)</td>
+            <td data-label="Total price" class="pt-price">€4,800</td>
+            <td data-label="Per hour">€16</td>
+            <td data-label="Lessons">300 lessons of 60 min</td>
+            <td data-label="Timeframe">About 2 years</td>
           </tr>
         </tbody>
       </table>
@@ -4302,7 +4407,7 @@
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">Can I pay in instalments? <span class="arrow">▼</span></div>
-      <div class="faq-a">The complete 150-hour course can be paid in 3 instalments of €850.</div>
+      <div class="faq-a">Yes. The 200-hour package can be paid in 4 instalments of €850, and the 300-hour package in 6 instalments of €800.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">Which payment methods do you accept? <span class="arrow">▼</span></div>
@@ -5174,9 +5279,11 @@
                   <option value="1 Hour - €25">1 Hour — €25</option>
                   <option value="5 Hours - €120">5 Hours — €120</option>
                   <option value="10 Hours - €230">10 Hours — €230</option>
-                  <option value="50 Hours (Block 1) - €1,050">50 Hours (Block 1) — €1,050</option>
-                  <option value="100 Hours (Blocks 1+2) - €1,900">100 Hours (Blocks 1+2) — €1,900</option>
-                  <option value="150 Hours (Complete Course) - €2,550">150 Hours (Complete Course) — €2,550</option>
+                  <option value="25 Hours - €550">25 Hours — €550</option>
+                  <option value="50 Hours - €1,050">50 Hours — €1,050</option>
+                  <option value="100 Hours - €1,900">100 Hours — €1,900</option>
+                  <option value="200 Hours - €3,400">200 Hours — €3,400</option>
+                  <option value="300 Hours - €4,800">300 Hours — €4,800</option>
                   <option value="Not sure yet">Not sure yet</option>
                 </select>
               </div>
