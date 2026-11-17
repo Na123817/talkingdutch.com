@@ -1153,6 +1153,19 @@
   html body #about.page .orange-panel p:last-child { margin-bottom: 0 !important; }
   html body #about.page .content > div[style*="margin-bottom:3.5rem"] { margin-bottom: 0 !important; }
   html body #about.page .content { padding-bottom: 4rem; }
+  /* Price table: stacked cards on phones */
+  @media (max-width: 600px) {
+    html body #services.page.page .price-table-wrap { overflow: visible !important; }
+    html body #services.page.page .price-table.price-table, html body #services.page.page .price-table.price-table tbody, html body #services.page.page .price-table.price-table tr { display: block !important; width: 100% !important; min-width: 0 !important; background: none !important; border: none !important; }
+    html body #services.page.page .price-table.price-table thead { display: none !important; }
+    html body #services.page.page .price-table.price-table tr { border: 1px solid rgba(232,119,34,0.35) !important; border-radius: 12px; padding: 0.9rem 1rem !important; margin-bottom: 0.8rem; background: rgba(36,16,4,0.55) !important; }
+    html body #services.page.page .price-table.price-table tr.pt-featured { border-color: var(--accent) !important; }
+    html body #services.page.page .price-table.price-table td, html body #services.page.page .price-table.price-table tr.pt-featured td { display: flex !important; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.35rem 0 !important; border: none !important; background: none !important; box-shadow: none !important; text-align: right; white-space: normal !important; width: 100% !important; }
+    html body #services.page.page .price-table.price-table td::before { content: attr(data-label); font-family: 'Barlow', sans-serif; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(247,236,217,0.6); text-align: left; flex-shrink: 0; }
+    html body #services.page.page .price-table.price-table td.pt-pkg { font-size: 1.05rem; padding-bottom: 0.5rem !important; border-bottom: 1px solid rgba(232,119,34,0.25) !important; margin-bottom: 0.3rem; }
+    html body #services.page.page .price-table.price-table td.pt-pkg::before { content: none; }
+    html body #services.page.page .price-table.price-table td.pt-price { font-size: 1.2rem !important; }
+  }
   html body .footer-cta-text { margin: 0 0 0.6rem; font-size: 0.92rem; line-height: 1.55; color: rgba(247,236,217,0.75); }
   html body .footer-col-group a.footer-cta-btn { display: inline-flex; align-self: flex-start; padding: 0.7rem 1.3rem; border-radius: 999px; border: 1.5px solid rgba(240,120,30,0.9); background: rgba(240,120,30,0.16); color: #ffd9b0; font-weight: 600; transition: background .25s, transform .25s; }
   html body .footer-col-group a.footer-cta-btn:hover { background: rgba(240,120,30,0.32); color: #fff; transform: translateY(-2px); }
@@ -3657,46 +3670,46 @@
         </thead>
         <tbody>
           <tr>
-            <td class="pt-pkg">1 hour</td>
-            <td class="pt-price">€25</td>
-            <td>€25</td>
-            <td>1 lesson of 60 min</td>
-            <td>Within 30 days</td>
+            <td data-label="Package" class="pt-pkg">1 hour</td>
+            <td data-label="Total price" class="pt-price">€25</td>
+            <td data-label="Per hour">€25</td>
+            <td data-label="Lessons">1 lesson of 60 min</td>
+            <td data-label="Timeframe">Within 30 days</td>
           </tr>
           <tr>
-            <td class="pt-pkg">5 hours</td>
-            <td class="pt-price">€120</td>
-            <td>€24</td>
-            <td>5 lessons of 60 min</td>
-            <td>Within 60 days</td>
+            <td data-label="Package" class="pt-pkg">5 hours</td>
+            <td data-label="Total price" class="pt-price">€120</td>
+            <td data-label="Per hour">€24</td>
+            <td data-label="Lessons">5 lessons of 60 min</td>
+            <td data-label="Timeframe">Within 60 days</td>
           </tr>
           <tr>
-            <td class="pt-pkg">10 hours</td>
-            <td class="pt-price">€230</td>
-            <td>€23</td>
-            <td>10 lessons of 60 min</td>
-            <td>Within 90 days</td>
+            <td data-label="Package" class="pt-pkg">10 hours</td>
+            <td data-label="Total price" class="pt-price">€230</td>
+            <td data-label="Per hour">€23</td>
+            <td data-label="Lessons">10 lessons of 60 min</td>
+            <td data-label="Timeframe">Within 90 days</td>
           </tr>
           <tr>
-            <td class="pt-pkg">50 hours (Block 1)</td>
-            <td class="pt-price">€1,050</td>
-            <td>€21</td>
-            <td>50 lessons of 60 min</td>
-            <td>2 a week, about 6 months</td>
+            <td data-label="Package" class="pt-pkg">50 hours (Block 1)</td>
+            <td data-label="Total price" class="pt-price">€1,050</td>
+            <td data-label="Per hour">€21</td>
+            <td data-label="Lessons">50 lessons of 60 min</td>
+            <td data-label="Timeframe">2 a week, about 6 months</td>
           </tr>
           <tr>
-            <td class="pt-pkg">100 hours (Blocks 1+2)</td>
-            <td class="pt-price">€1,900</td>
-            <td>€19</td>
-            <td>100 lessons of 60 min</td>
-            <td>3 a week, about 8 months</td>
+            <td data-label="Package" class="pt-pkg">100 hours (Blocks 1+2)</td>
+            <td data-label="Total price" class="pt-price">€1,900</td>
+            <td data-label="Per hour">€19</td>
+            <td data-label="Lessons">100 lessons of 60 min</td>
+            <td data-label="Timeframe">3 a week, about 8 months</td>
           </tr>
           <tr class="pt-featured">
-            <td class="pt-pkg">150 hours (full course)</td>
-            <td class="pt-price">€2,550</td>
-            <td>€17</td>
-            <td>150 lessons of 60 min</td>
-            <td>3 a week, about 12 months</td>
+            <td data-label="Package" class="pt-pkg">150 hours (full course)</td>
+            <td data-label="Total price" class="pt-price">€2,550</td>
+            <td data-label="Per hour">€17</td>
+            <td data-label="Lessons">150 lessons of 60 min</td>
+            <td data-label="Timeframe">3 a week, about 12 months</td>
           </tr>
         </tbody>
       </table>
