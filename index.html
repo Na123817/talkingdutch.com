@@ -1265,8 +1265,8 @@
     background: rgba(232,119,34,0.28) !important; color: #fff3e6 !important; border-color: var(--accent) !important;
     box-shadow: 0 0 16px rgba(232,119,34,0.35) !important; transform: translateY(-1px); }
   /* Photo band: title + subtitle on the photo; content starts below it */
-  :root { --band: max(460px, 70vh); }
-  @media (max-width: 600px) { :root { --band: max(400px, 62vh); } }
+  :root { --band: max(520px, 100vh); }
+  @supports (height: 100svh) { :root { --band: max(520px, 100svh); } }
   html body .page .page-photo { height: var(--band) !important; -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); }
   html body .page .page-head { min-height: calc(var(--band) - 140px); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-sizing: border-box; padding-bottom: 1.5rem; order: 0 !important; }
   html body .page .page-head.reveal-scroll { opacity: 1 !important; transform: none !important; filter: none !important; }
@@ -3200,9 +3200,92 @@
     </div>
   </div>
 
+  <!-- ── BUTTONS BELOW THE PHOTO ── -->
+  <div class="home-section home-ctas-section" style="padding-top:1.5rem;padding-bottom:0;">
+    <div class="home-hero-ctas home-ctas-below" style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin:0 auto 3rem;"><button class="booking-gcal-btn" type="button" onclick="__pendingPackage='30-Minute Trial - €12';show('contact')">Book a €12 trial</button><button class="booking-gcal-btn" type="button" onclick="show('services')">See packages</button></div>
+  </div>
+
+  <!-- ── HOW IT WORKS ── -->
+  <div class="home-section" style="padding-top:7.5rem;padding-bottom:4rem;">
+    <div class="home-section-label">How it works</div>
+    <h2 class="home-section-title">How I Teach Dutch Online</h2>
+    <div class="home-services-grid">
+      <div class="hs-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="hs-title">Live on Google Meet</div>
+        <div class="hs-desc">Real conversation with me, a full 60 minutes every lesson. No pre-recorded videos.</div>
+      </div>
+<div class="gflip-back">
+        <div class="hs-title">Live on Google Meet</div>
+        <div class="hs-desc">Real conversation with me, a full 60 minutes every lesson. No pre-recorded videos.</div>
+      </div>
+</div>
+</div>
+      <div class="hs-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="hs-title">One-to-one or in a group</div>
+        <div class="hs-desc">Private lessons, or a group of up to 6. Ideal for companies training their team.</div>
+      </div>
+<div class="gflip-back">
+        <div class="hs-title">One-to-one or in a group</div>
+        <div class="hs-desc">Private lessons, or a group of up to 6. Ideal for companies training their team.</div>
+      </div>
+</div>
+</div>
+      <div class="hs-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="hs-title">All levels and exams</div>
+        <div class="hs-desc">From beginner to C2, including NT2 and inburgering exam preparation.</div>
+      </div>
+<div class="gflip-back">
+        <div class="hs-title">All levels and exams</div>
+        <div class="hs-desc">From beginner to C2, including NT2 and inburgering exam preparation.</div>
+      </div>
+</div>
+</div>
+      <div class="hs-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="hs-title">Speak from day one</div>
+        <div class="hs-desc">Every lesson is built around talking, so you build confidence fast.</div>
+      </div>
+<div class="gflip-back">
+        <div class="hs-title">Speak from day one</div>
+        <div class="hs-desc">Every lesson is built around talking, so you build confidence fast.</div>
+      </div>
+</div>
+</div>
+      <div class="hs-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="hs-title">Made for you</div>
+        <div class="hs-desc">A 30-minute trial (€12) sets your goals, pace and materials.</div>
+      </div>
+<div class="gflip-back">
+        <div class="hs-title">Made for you</div>
+        <div class="hs-desc">A 30-minute trial (€12) sets your goals, pace and materials.</div>
+      </div>
+</div>
+</div>
+      <div class="hs-card">
+<div class="gflip-inner">
+<div class="gflip-front">
+        <div class="hs-title">A teacher who gets it</div>
+        <div class="hs-desc">I speak Dutch, English, Spanish and Portuguese, so I can explain in a language you know.</div>
+      </div>
+<div class="gflip-back">
+        <div class="hs-title">A teacher who gets it</div>
+        <div class="hs-desc">I speak Dutch, English, Spanish and Portuguese, so I can explain in a language you know.</div>
+      </div>
+</div>
+</div>
+    </div>
+  </div>
   <!-- ── PACKAGE DEALS ── -->
   <div class="home-section" style="padding-top:1.5rem;">
-    <div class="home-hero-ctas home-ctas-below" style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin:0 auto 3rem;"><button class="booking-gcal-btn" type="button" onclick="__pendingPackage='30-Minute Trial - €12';show('contact')">Book a €12 trial</button><button class="booking-gcal-btn" type="button" onclick="show('services')">See packages</button></div>
     <div class="home-section-label">Pricing</div>
     <h2 class="home-section-title">Dutch Lesson Packages &amp; Pricing</h2>
 
@@ -3484,85 +3567,6 @@
     </div>
   </div>
 
-  <!-- ── HOW IT WORKS ── -->
-  <div class="home-section" style="padding-top:7.5rem;padding-bottom:4rem;">
-    <div class="home-section-label">How it works</div>
-    <h2 class="home-section-title">How I Teach Dutch Online</h2>
-    <div class="home-services-grid">
-      <div class="hs-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="hs-title">Live on Google Meet</div>
-        <div class="hs-desc">Real conversation with me, a full 60 minutes every lesson. No pre-recorded videos.</div>
-      </div>
-<div class="gflip-back">
-        <div class="hs-title">Live on Google Meet</div>
-        <div class="hs-desc">Real conversation with me, a full 60 minutes every lesson. No pre-recorded videos.</div>
-      </div>
-</div>
-</div>
-      <div class="hs-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="hs-title">One-to-one or in a group</div>
-        <div class="hs-desc">Private lessons, or a group of up to 6. Ideal for companies training their team.</div>
-      </div>
-<div class="gflip-back">
-        <div class="hs-title">One-to-one or in a group</div>
-        <div class="hs-desc">Private lessons, or a group of up to 6. Ideal for companies training their team.</div>
-      </div>
-</div>
-</div>
-      <div class="hs-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="hs-title">All levels and exams</div>
-        <div class="hs-desc">From beginner to C2, including NT2 and inburgering exam preparation.</div>
-      </div>
-<div class="gflip-back">
-        <div class="hs-title">All levels and exams</div>
-        <div class="hs-desc">From beginner to C2, including NT2 and inburgering exam preparation.</div>
-      </div>
-</div>
-</div>
-      <div class="hs-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="hs-title">Speak from day one</div>
-        <div class="hs-desc">Every lesson is built around talking, so you build confidence fast.</div>
-      </div>
-<div class="gflip-back">
-        <div class="hs-title">Speak from day one</div>
-        <div class="hs-desc">Every lesson is built around talking, so you build confidence fast.</div>
-      </div>
-</div>
-</div>
-      <div class="hs-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="hs-title">Made for you</div>
-        <div class="hs-desc">A 30-minute trial (€12) sets your goals, pace and materials.</div>
-      </div>
-<div class="gflip-back">
-        <div class="hs-title">Made for you</div>
-        <div class="hs-desc">A 30-minute trial (€12) sets your goals, pace and materials.</div>
-      </div>
-</div>
-</div>
-      <div class="hs-card">
-<div class="gflip-inner">
-<div class="gflip-front">
-        <div class="hs-title">A teacher who gets it</div>
-        <div class="hs-desc">I speak Dutch, English, Spanish and Portuguese, so I can explain in a language you know.</div>
-      </div>
-<div class="gflip-back">
-        <div class="hs-title">A teacher who gets it</div>
-        <div class="hs-desc">I speak Dutch, English, Spanish and Portuguese, so I can explain in a language you know.</div>
-      </div>
-</div>
-</div>
-    </div>
-  </div>
   <div class="hero hero-end"><div class="hero-inner"><div class="hero-text">
 <div class="hero-body">
           <div class="accent-bar"></div>
@@ -4828,7 +4832,7 @@
 <!-- ══════════ FAQ ══════════ -->
 <div class="page" id="faq">
   <div class="content">
-    <figure class="page-photo"><picture><source media="(max-width: 600px) and (orientation: portrait)" srcset="contact-bg-giethoorn-m.webp"><img src="contact-bg-giethoorn-opt.webp" srcset="contact-bg-giethoorn-opt.webp 1600w, contact-bg-giethoorn-2400.webp 2400w" sizes="100vw" alt="Thatched houses and canals in Giethoorn" loading="lazy" decoding="async"></picture></figure>
+    <figure class="page-photo"><picture><source media="(max-width: 600px) and (orientation: portrait)" srcset="faq-bg-keukenhof-m.webp"><img src="faq-bg-keukenhof.webp" alt="Windmill and tulip fields in spring" loading="lazy" decoding="async"></picture></figure>
     <div class="page-head"><div class="page-title" id="faqTitle"></div>
     <p class="page-sub">Quick answers about lessons, levels, exams and payment.</p></div>
     
