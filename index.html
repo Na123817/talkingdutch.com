@@ -1444,6 +1444,10 @@
   html body .payment-method-icon .pm-logo.pm-logo-plain { background: none; box-shadow: none; padding: 0; min-width: 0; height: 28px; }
   html body .payment-method-icon .pm-logo-plain img { height: 28px; width: auto; display: block; }
   @media (min-width: 1200px) { html body .page .page-sub { white-space: nowrap !important; max-width: none !important; width: auto !important; margin-left: -300px !important; margin-right: -300px !important; text-align: center !important; } }
+  /* Pillars under "How I Teach" on the Syllabus page */
+  html body #syllabus .syl-pillars { margin-top: 2.4rem; }
+  html body #syllabus .syl-pillars .services-pillars { display: flex; flex-direction: column; gap: 1.1rem; width: fit-content; max-width: 560px; margin: 0 auto; }
+  html body #syllabus .syl-pillars .sp-item { display: flex; gap: 0.9rem; align-items: flex-start; text-align: left; }
   html body .footer-cta-text { margin: 0 0 0.6rem; font-size: 0.92rem; line-height: 1.55; color: rgba(247,236,217,0.75); }
   html body .footer-col-group a.footer-cta-btn { display: inline-flex; align-self: flex-start; padding: 0.7rem 1.3rem; border-radius: 999px; border: 1.5px solid rgba(240,120,30,0.9); background: rgba(240,120,30,0.16); color: #ffd9b0; font-weight: 600; transition: background .25s, transform .25s; }
   html body .footer-col-group a.footer-cta-btn:hover { background: rgba(240,120,30,0.32); color: #fff; transform: translateY(-2px); }
@@ -3693,19 +3697,12 @@
     </div>
   </div>
 
-  <div class="hero hero-end"><div class="hero-inner"><div class="hero-text">
-<div class="hero-body">
-          <div class="accent-bar"></div>
-          <p class="hero-tagline" style="text-align:center;">Ready to start? Book a 30-minute trial lesson with Talking Dutch for €12. We'll check your level, set your goals and plan your lessons.</p>
-          <div class="home-hero-ctas" style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.4rem;"><button class="booking-gcal-btn" type="button" onclick="bookTrial()">Book a €12 trial</button><button class="booking-gcal-btn" type="button" onclick="show('services')">See packages</button></div>
-        </div>
-  </div></div></div>
 </div>
 
 <!-- ══════════ COURSEWARE ══════════ -->
 <div class="page" id="courseware">
   <div class="content">
-    <figure class="page-photo"><picture><source media="(max-width: 600px) and (orientation: portrait)" srcset="courseware-bg-street-v7-m.webp"><img src="courseware-bg-street-v7.webp" alt="King's Day concert with a crowd dressed in orange" loading="lazy" decoding="async"></picture></figure>
+    <figure class="page-photo"><picture><source media="(max-width: 600px) and (orientation: portrait)" srcset="courseware-bg-office2-m.webp"><img src="courseware-bg-office2.webp" alt="King's Day concert with a crowd dressed in orange" loading="lazy" decoding="async"></picture></figure>
     <div class="page-head"><div class="page-title" id="coursewareTitle"></div>
     <p class="page-sub">All the materials you need, plus a €12 trial lesson to start</p></div>
     
@@ -3865,22 +3862,6 @@
         <div class="services-label">Services</div>
         <h2 class="home-section-title sec-title">Speak Dutch with Confidence</h2>
         <p class="services-intro">Every package has one goal: getting you to speak Dutch with confidence, whether you're preparing for an exam, settling in the Netherlands, or just want to talk with the people around you.</p>
-        <div class="services-pillars">
-          <div class="sp-item">
-            <div class="sp-dot"></div>
-            <div>
-              <div class="sp-title">Master the language</div>
-              <div class="sp-desc">Grammar, pronunciation and everyday conversation, step by step, so it sticks.</div>
-            </div>
-          </div>
-          <div class="sp-item">
-            <div class="sp-dot"></div>
-            <div>
-              <div class="sp-title">Understand the culture</div>
-              <div class="sp-desc">Customs, daily life and the unwritten rules, explained clearly, so you feel at home.</div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="services-grid">
@@ -4229,6 +4210,24 @@
         </div>
 </div>
 </div>
+      </div>
+      <div class="syl-pillars">
+        <div class="services-pillars">
+          <div class="sp-item">
+            <div class="sp-dot"></div>
+            <div>
+              <div class="sp-title">Master the language</div>
+              <div class="sp-desc">Grammar, pronunciation and everyday conversation, step by step, so it sticks.</div>
+            </div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-dot"></div>
+            <div>
+              <div class="sp-title">Understand the culture</div>
+              <div class="sp-desc">Customs, daily life and the unwritten rules, explained clearly, so you feel at home.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
